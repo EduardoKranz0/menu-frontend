@@ -1,6 +1,7 @@
 import { cn } from "cn"
 import { useCategories } from "../hooks/use-category"
 import { Utensils } from "lucide-react"
+import { Link } from "react-router-dom"
 
 export function CategoryNav() {
 
@@ -13,7 +14,7 @@ export function CategoryNav() {
 
                     <li key={category.id}className="relative">
 
-                        <link to={'/products?categoryId=${category.id}'} className={cn(
+                        <Link to={'/products?categoryId=${category.id}'} className={cn(
                             'relative flex w-full items-center px-5 py-5',
                             'font-menu text-lg font-semibold uppercase tracking-tight',
                             'border-xl boredr border-transparent',
@@ -29,7 +30,7 @@ export function CategoryNav() {
                             />
                             )}
                             <span className="leading-tight">{category.name}</span>
-                        </link>
+                        </Link>
 
                     </li>
 
