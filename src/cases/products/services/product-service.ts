@@ -4,8 +4,10 @@ import type { ProductDTO } from "../dtos/product-dto";
 const ENDPOINT = '/product'; // Ajuste para '/products' se a sua API usar no plural
 
 export const ProductService = {
-  async listAll(): Promise<ProductDTO[]> {
-    const result = await api.get<ProductDTO[]>(ENDPOINT);
+async listAll(categoryId?: string): Promise<ProductDTO[]> {
+    const result = await api.get<ProductDTO[]>(ENDPOINT, {
+      params: { categoryId },
+    });
     return result.data;
   },
 
